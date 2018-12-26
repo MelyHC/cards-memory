@@ -3,53 +3,51 @@
   height: 40vmin;
 }
 
-.flip-conatiner {
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  padding: 40px;
-  position: relative;
-  margin: 10px 10px;
-  width: 100vw;
+.view {
+  min-height: 92vh;
 }
 
-.card {
-  position: relative;
-  width: 500px;
-  height: 50px;
-  transition: 0.6s;
+.bg-black {
+  background-color: rgba(0, 0, 0, 0.397);
+}
+
+.fas {
+  color: white;
+}
+
+.fas:hover {
+  color: rgb(231, 231, 231);
+}
+
+.content-card {
+  min-width: 88px;
+  min-height: 117px;
+}
+
+.card-flip {
+  transition: transform 1s;
   transform-style: preserve-3d;
-  transform-origin: 50% 25px;
-  margin: 5px;
-}
-
-.card:active, .card.flip {
-  transform: rotateY(180deg);
-}
-
-.front, .back{
-  position: absolute;
+  cursor: pointer;
+  position: relative;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  text-align: center;
 }
 
-.front{
-  transform: rotateY(0deg);
-  /* x */
-  background-color: #e93e29;
-  color: #FFF;
-  font: 1em/1.8em Arial;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.back{
+.is-flipped {
   transform: rotateY(180deg);
-  background-color: black;
-  color: white;
+}
+
+.card-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* line-height: 260px; */
+  text-align: center;
+  backface-visibility: hidden;
+}
+
+.card-face-front {
+  transform: rotateY(180deg);
 }
 
 @keyframes App-logo-spin {
