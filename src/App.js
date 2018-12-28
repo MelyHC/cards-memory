@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import './App.css';
-import data from './dataCards/dataCards.json';
+import data from './dataCards/dataCards.js';
 import back from './back.PNG';
 import suffle from 'shuffle-array';
 
