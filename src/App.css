@@ -1,6 +1,5 @@
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.home {
+  height: 100vh;
 }
 
 .view {
@@ -11,11 +10,11 @@
   background-color: rgba(0, 0, 0, 0.397);
 }
 
-.fas {
+.icon-white {
   color: white;
 }
 
-.fas:hover {
+.icon-white:hover {
   color: rgb(231, 231, 231);
 }
 
@@ -50,11 +49,10 @@
   transform: rotateY(180deg);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hidden {
+  visibility: hidden;
+}
+
+.game-over {
+  max-height: 200px;
 }
