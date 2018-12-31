@@ -1,44 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Cards memory
 
-## Available Scripts
+## Instrucciones
 
-In the project directory, you can run:
+Para iniciar entra a este link: [Cards Memory](https://melyhc.github.io/cards-memory/)
 
-### `npm start`
+### 1. Seleciona el nivel que quieres jugar (fácil, medio, difícil)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+En cada uno de los niveles aumentará la dificultad con 8, 16 0 32 cartas sobre la mesa.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+![Pantalla de inicio](./img/home.png)
 
-### `npm test`
+### 2. Empezar el juego
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tendrás que encontrar la pareja de cada carta, se consideran pareja a las cartas con el mismo número y tipo/palo.
 
-### `npm run build`
+![Primera carta](./img/card1.png)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Tendrás en la parte superior derecha tendrás un contador con la cantidad de veces que volteas cada pareja.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Podrás resetear el juego, pero ojo tendrás que volver a elegir el nivel.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Ganar
 
-### `npm run eject`
+Para ganar encuentra todas las parejas.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Última pareja](./img/end.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Cuando esten todas las cartas enparejadas aparecerá un mensaje indicando cuantos intentos te tomo resolver el nivel y podrás volver a empezar.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Mensaje de felicitaciones](./img/gameOver.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Si clonas este repositorio
 
-## Learn More
+Si quieres puedes hacerle tus propias modificaciones al código, el framework que utilice es React.js.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Recuerda hacer un: 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+~~~
+npm install
+~~~
+
+Para descargar las dependencias necesarias para que se ejecute el código.
+
+Y depués de descargar todas la dependencias ejecuta: 
+
+~~~
+npm start
+~~~
+
+Para correr el código.
+
+Para editar el código entra a src y en App.js encotrarás todas las funciones utilizadas.
