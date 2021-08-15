@@ -1,8 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import './App.css';
-import data from './dataCards/dataCards.js';
-import back from './back.PNG';
 import suffle from 'shuffle-array';
+import data from './dataCards/dataCards.js';
+import btnEasy from './BZcartas/Botones/D_DBottonFacil.png';
+import btnMedium from './BZcartas/Botones/D_DBottonMedio.png';
+import btnHard from './BZcartas/Botones/D_DBottonDificil.png';
+import back from './back.PNG';
+import './App.css';
 
 class App extends Component {
   state = {
@@ -73,7 +76,7 @@ class App extends Component {
     this.setState({ cards, level: levelSelected })
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const arrCards = data.map(({ name, img }, index) => {
       return {
         name,
@@ -93,12 +96,12 @@ class App extends Component {
     if (level === 0) {
       return (
         <div className="home d-flex justify-content-center align-items-center bg-black">
-          <section className="bg-light px-2 py-5 rounded">
-            <h5 className="m-2">Elige un nivel para comenzar</h5>
-            <form onClick={this.selectLevel} className="d-flex justify-content-center mt-4">
-              <button className="btn btn-primary m-2" value="8">Fácil</button>
-              <button className="btn btn-warning text-white m-2" value="16">Medio</button>
-              <button className="btn btn-danger m-2" value="32">Difícil</button>
+          <section className="bg-light rounded">
+            <h2 className="text-center mt-3">Elige un nivel para comenzar</h2>
+            <form onClick={this.selectLevel} className="d-flex justify-content-center flex-column mt-4">
+              <button className="btn btn-custom" value="8"><img src={btnEasy} alt="nivel fácil" /></button>
+              <button className="btn btn-custom m-2" value="16"><img src={btnMedium} alt="nivel medio" /></button>
+              <button className="btn btn-custom m-2" value="32"><img src={btnHard} alt="nivel difícil" /></button>
             </form>
           </section>
         </div>
