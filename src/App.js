@@ -65,11 +65,12 @@ class App extends Component {
 
     while (cards.length < levelSelected) {
       const selectCard = allCards[Math.round(Math.random() * allCards.length)];
+      
       if (!cards.find(card => card === selectCard)) {
         cards.push(selectCard);
         cards.push({ ...selectCard, index: selectCard.index + 1 });
-      }
-    }
+      };
+    };
 
     suffle(cards);
 
@@ -99,9 +100,9 @@ class App extends Component {
           <section className="bg-light rounded">
             <h2 className="text-center mt-3">Elige un nivel para comenzar</h2>
             <form onClick={this.selectLevel} className="d-flex justify-content-center flex-column mt-4">
-              <button className="btn btn-custom" value="8"><img src={btnEasy} alt="nivel fácil" /></button>
-              <button className="btn btn-custom m-2" value="16"><img src={btnMedium} alt="nivel medio" /></button>
-              <button className="btn btn-custom m-2" value="32"><img src={btnHard} alt="nivel difícil" /></button>
+              <input alt="nivel fácil" className="btn btn-custom" type="image" src={btnEasy} value="8" />
+              <input alt="nivel medio" className="btn btn-custom m-2" type="image" src={btnMedium} value="16" />
+              <input alt="nivel difícil" className="btn btn-custom m-2" type="image" src={btnHard} value="32" />
             </form>
           </section>
         </div>
