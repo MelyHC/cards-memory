@@ -4,7 +4,8 @@ import data from './dataCards/dataCards.js';
 import btnEasy from './BZcartas/Botones/D_DBottonFacil.png';
 import btnMedium from './BZcartas/Botones/D_DBottonMedio.png';
 import btnHard from './BZcartas/Botones/D_DBottonDificil.png';
-import back from './back.PNG';
+// import back from './back.PNG';
+import back from './BZcartas/ContraPortada.png'
 import './App.css';
 
 class App extends Component {
@@ -65,7 +66,7 @@ class App extends Component {
 
     while (cards.length < levelSelected) {
       const selectCard = allCards[Math.round(Math.random() * allCards.length)];
-      
+
       if (!cards.find(card => card === selectCard)) {
         cards.push(selectCard);
         cards.push({ ...selectCard, index: selectCard.index + 1 });
@@ -96,21 +97,26 @@ class App extends Component {
 
     if (level === 0) {
       return (
-        <div className="home d-flex justify-content-center align-items-center bg-black">
-          <section className="bg-light rounded">
-            <h2 className="text-center mt-3">Elige un nivel para comenzar</h2>
-            <form onClick={this.selectLevel} className="d-flex justify-content-center flex-column mt-4">
-              <input alt="nivel fácil" className="btn btn-custom" type="image" src={btnEasy} value="8" />
-              <input alt="nivel medio" className="btn btn-custom m-2" type="image" src={btnMedium} value="16" />
-              <input alt="nivel difícil" className="btn btn-custom m-2" type="image" src={btnHard} value="32" />
+        <div className="home d-flex justify-content-center align-items-center bg-black m-0 p-2">
+          <section className="col-12 col-md-7 rounded">
+            <h2 className="text-center mt-3 text-white">Elige un nivel para comenzar</h2>
+            <form onClick={this.selectLevel} className="d-flex justify-content-center flex-column flex-md-row mt-4 p-0">
+              <div>
+                <input alt="nivel fácil" className="btn btn-custom" type="image" src={btnEasy} value="8" />
+                <input alt="nivel medio" className="btn btn-custom m-2" type="image" src={btnMedium} value="16" />
+              </div>
+              <div>
+                <input alt="nivel difícil" className="btn btn-custom m-2" type="image" src={btnHard} value="32" />
+                <input alt="nivel difícil" className="btn btn-custom m-2" type="image" src={btnHard} value="64" />
+              </div>
             </form>
           </section>
         </div>
       )
     } else {
       return (
-        <Fragment>
-          <header className="d-flex justify-content-between bg-black text-white">
+        <div className="home bg-black">
+          <header className="d-flex justify-content-between bg-blac text-white">
             <i className="fas fa-undo-alt btn icon-white" onClick={this.refreshPage}></i>
             <h4 className="d-inline-block text-center">Cards Memory</h4>
             <h5 className="m-1">N°: {count}</h5>
@@ -135,7 +141,7 @@ class App extends Component {
               </div>
             }
           </div>
-        </Fragment>
+        </div>
       )
     }
   }
