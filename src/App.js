@@ -1,11 +1,11 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import suffle from 'shuffle-array';
-import data from './dataCards/dataCards.js';
+import data from './dataCards/dataCardsBz.js';
 import btnEasy from './BZcartas/Botones/D_DBottonFacil.png';
 import btnMedium from './BZcartas/Botones/D_DBottonMedio.png';
 import btnHard from './BZcartas/Botones/D_DBottonDificil.png';
-// import back from './back.PNG';
-import back from './BZcartas/ContraPortada.png'
+import back from './BZcartas/ContraPortada.png';
+import gameOver from './BZcartas/GameOver.png';
 import './App.css';
 
 class App extends Component {
@@ -79,13 +79,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const arrCards = data.map(({ name, img }, index) => {
+    const arrCards = data.map(({ img }, index) => {
       return {
-        name,
         img,
         visibility: false,
         flip: false,
-        index: name + index
+        index: img + index
       }
     });
 
@@ -98,16 +97,16 @@ class App extends Component {
     if (level === 0) {
       return (
         <div className="home d-flex justify-content-center align-items-center bg-black m-0 p-2">
-          <section className="col-12 col-md-7 rounded">
-            <h2 className="text-center mt-3 text-white">Elige un nivel para comenzar</h2>
+          <section className="col-11 col-sm-8 col-lg-7 rounded p-0">
+            <h2 className="text-center mt-3 text-white stroke">Elige un nivel para comenzar</h2>
             <form onClick={this.selectLevel} className="d-flex justify-content-center flex-column flex-md-row mt-4 p-0">
               <div>
                 <input alt="nivel fácil" className="btn btn-custom" type="image" src={btnEasy} value="8" />
-                <input alt="nivel medio" className="btn btn-custom m-2" type="image" src={btnMedium} value="16" />
+                <input alt="nivel medio" className="btn btn-custom" type="image" src={btnMedium} value="16" />
               </div>
               <div>
-                <input alt="nivel difícil" className="btn btn-custom m-2" type="image" src={btnHard} value="32" />
-                <input alt="nivel difícil" className="btn btn-custom m-2" type="image" src={btnHard} value="64" />
+                <input alt="nivel difícil" className="btn btn-custom" type="image" src={btnHard} value="32" />
+                <input alt="nivel difícil" className="btn btn-custom" type="image" src={btnHard} value="64" />
               </div>
             </form>
           </section>
@@ -118,27 +117,30 @@ class App extends Component {
         <div className="home bg-black">
           <header className="d-flex justify-content-between bg-blac text-white">
             <i className="fas fa-undo-alt btn icon-white" onClick={this.refreshPage}></i>
-            <h4 className="d-inline-block text-center">Cards Memory</h4>
             <h5 className="m-1">N°: {count}</h5>
           </header>
           <div className="container">
-            {cards.every(cardHide => cardHide.visibility === true)
-              ? <div className="d-flex view justify-content-center align-items-center">
-                <section className="rounded bg-light text-center p-2">
-                  <h5 className="m-4">¡Felicidades ganaste!</h5>
-                  <p>En {count} intentos <i className="fas fa-undo-alt btn" onClick={this.refreshPage}></i></p>
-                </section>
-              </div>
-              : <div className="row m-0 p-0 view justify-content-center">
-                {cards.map(({ name, img, visibility, flip, index }, i) =>
-                  <div className="col-6 col-sm-4 col-md-3 my-1 content-card" key={index + i}>
-                    <figure className={`card-flip ${flip ? "is-flipped" : null} ${visibility ? "hidden" : null}`} onClick={() => this.handleClick(index)}>
-                      <img className="card-face card-face-front img-fluid rounded" src={img} alt={name}></img>
-                      <img className="card-face img-fluid rounded" src={back} alt="parte trasera de la carta"></img>
-                    </figure>
-                  </div>
-                )}
-              </div>
+            {
+              cards.every(cardHide => cardHide.visibility)
+                ? <div className="game-over d-flex view justify-content-center align-items-center position-relative">
+                  <img className="img-game-over  img-fluid" src={gameOver} alt="" />
+                  <section className="rounded pt-5 position-absolute text-white stroke">
+                    <h2 className="mt-3 mr-3 mb-0 mt-sm-4 size-custome">Ganaste!</h2>
+                    <h5 className="pr-2 size-custome-mini">{count} intentos</h5>
+                  </section>
+                </div>
+                : <div className="row m-0 p-0 view justify-content-center">
+                  {
+                    cards.map(({ img, visibility, flip, index }, i) =>
+                      <div className="col-6 col-sm-4 col-lg-3 my-1 content-card" key={index + i}>
+                        <figure className={`card-flip ${flip ? "is-flipped" : null} ${visibility ? "hidden" : null}`} onClick={() => this.handleClick(index)}>
+                          <img className="card-face card-face-front img-fluid rounded" src={img} alt={img}></img>
+                          <img className="card-face img-fluid rounded" src={back} alt="parte trasera de la carta"></img>
+                        </figure>
+                      </div>
+                    )
+                  }
+                </div>
             }
           </div>
         </div>
