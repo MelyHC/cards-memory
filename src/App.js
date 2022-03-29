@@ -191,6 +191,12 @@ class App extends Component {
       widthCard = (widthScreen - 30) / 4;
       heightCard = widthCard * 1.75
 
+    } else if (widthScreen >= 720) {
+      console.log('720')
+      widthScreen = widthScreen > 720 ? 720 : widthScreen;
+      widthCard = (widthScreen - 30) / 3;
+      heightCard = widthCard * 1.75
+
     } else if (widthScreen >= 576) {
       console.log('576')
       widthScreen = widthScreen > 540 ? 540 : widthScreen;
@@ -200,8 +206,7 @@ class App extends Component {
 
     return {
       width: `${widthCard}px`,
-      height: `${heightCard}px`,
-      // position: 'relative'
+      height: `${heightCard}px`
     };
   };
 
