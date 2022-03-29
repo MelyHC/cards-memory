@@ -175,31 +175,31 @@ class App extends Component {
     if (widthScreen < 576) {
       console.log('0')
       widthCard = (widthScreen - 30) / 2;
-      heightCard = widthCard * 1.75
+      heightCard = widthCard * 1.75 - 60
 
     } else if (widthScreen >= 1200) {
       console.log('1200', widthScreen)
       widthScreen = widthScreen > 1140 ? 1140 : widthScreen;
       widthCard = (widthScreen - 30) / 4;
-      heightCard = widthCard * 1.75
+      heightCard = widthCard * 1.75 - 60
 
     } else if (widthScreen >= 992) {
       console.log('992')
       widthScreen = widthScreen > 1140 ? 1140 : widthScreen;
       widthCard = (widthScreen - 30) / 4;
-      heightCard = widthCard * 1.75
+      heightCard = widthCard * 1.75 - 60
 
     } else if (widthScreen >= 720) {
       console.log('720')
       widthScreen = widthScreen > 720 ? 720 : widthScreen;
       widthCard = (widthScreen - 30) / 3;
-      heightCard = widthCard * 1.75
+      heightCard = widthCard * 1.75 - 60
 
     } else if (widthScreen >= 576) {
       console.log('576')
       widthScreen = widthScreen > 540 ? 540 : widthScreen;
       widthCard = (widthScreen - 30) / 3;
-      heightCard = widthCard * 1.75
+      heightCard = widthCard * 1.75 - 60
     }
 
     return {
