@@ -119,10 +119,10 @@ class App extends Component {
           <section className="col-11 col-sm-8 col-lg-7 rounded p-0">
             <h1 className="text-center mt-3 text-white stroke">Elige un nivel para comenzar</h1>
             <form onClick={this.selectLevel} className="row mt-4 p-0">
-              <input alt="nivel fácil" className="col-xs-12 col-md-6 btn btn-custom" type="image" src={btnEasy} value="8" />
-              <input alt="nivel medio" className="col-xs-12 col-md-6 btn btn-custom" type="image" src={btnMedium} value="16" />
-              <input alt="nivel difícil" className="col-xs-12 col-md-6 btn btn-custom" type="image" src={btnHard} value="32" />
-              <input alt="nivel difícil" className="col-xs-12 col-md-6 btn btn-custom" type="image" src={btnHard} value="64" />
+              <input alt="nivel fácil" className="col-xs-12 col-md-6 btn" type="image" src={btnEasy} value="8" />
+              <input alt="nivel medio" className="col-xs-12 col-md-6 btn" type="image" src={btnMedium} value="16" />
+              <input alt="nivel difícil" className="col-xs-12 col-md-6 btn" type="image" src={btnHard} value="32" />
+              <input alt="nivel muy difícil" className="col-xs-12 col-md-6 btn" type="image" src={btnHard} value="64" />
             </form>
           </section>
         </div>
@@ -166,40 +166,45 @@ class App extends Component {
     }
   };
 
-  convertPxRem = (num) => Math.floor(num / 16);
-
-
   scaleCards = () => {
-    const widthScreen = window.innerWidth;
+    let widthScreen = window.innerWidth;
 
     let widthCard = 0;
     let heightCard = 0;
 
     if (widthScreen < 576) {
       console.log('0')
-      widthCard = this.convertPxRem(widthScreen / 2);
-      heightCard = widthCard * 1.3
+      widthCard = (widthScreen - 30) / 2;
+      heightCard = widthCard * 1.75
 
     } else if (widthScreen >= 1200) {
       console.log('1200', widthScreen)
-      widthCard = this.convertPxRem(widthScreen / 6.8);
-      heightCard = widthCard * 1.6
+      widthScreen = widthScreen > 1140 ? 1140 : widthScreen;
+      widthCard = (widthScreen - 30) / 4;
+      heightCard = widthCard * 1.75
 
     } else if (widthScreen >= 992) {
       console.log('992')
-      widthCard = this.convertPxRem(widthScreen / 4);
-      heightCard = widthCard * 1.4
+      widthScreen = widthScreen > 1140 ? 1140 : widthScreen;
+      widthCard = (widthScreen - 30) / 4;
+      heightCard = widthCard * 1.75
+
+    } else if (widthScreen >= 720) {
+      console.log('720')
+      widthScreen = widthScreen > 720 ? 720 : widthScreen;
+      widthCard = (widthScreen - 30) / 3;
+      heightCard = widthCard * 1.75
 
     } else if (widthScreen >= 576) {
       console.log('576')
-      widthCard = this.convertPxRem(widthScreen / 3);
-      heightCard = widthCard * 1.4
+      widthScreen = widthScreen > 540 ? 540 : widthScreen;
+      widthCard = (widthScreen - 30) / 3;
+      heightCard = widthCard * 1.75
     }
 
     return {
-      width: `${widthCard}rem`,
-      height: `${heightCard}rem`,
-      // position: 'relative'
+      width: `${widthCard}px`,
+      height: `${heightCard}px`
     };
   };
 
