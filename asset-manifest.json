@@ -1,7 +1,7 @@
 {
-  "main.css": "/cards-memory/static/css/main.e728ca70.chunk.css",
-  "main.js": "/cards-memory/static/js/main.14ec1156.chunk.js",
-  "main.js.map": "/cards-memory/static/js/main.14ec1156.chunk.js.map",
+  "main.css": "/cards-memory/static/css/main.9a7196cb.chunk.css",
+  "main.js": "/cards-memory/static/js/main.c57a9ae7.chunk.js",
+  "main.js.map": "/cards-memory/static/js/main.c57a9ae7.chunk.js.map",
   "static/js/1.d9fbbe87.chunk.js": "/cards-memory/static/js/1.d9fbbe87.chunk.js",
   "static/js/1.d9fbbe87.chunk.js.map": "/cards-memory/static/js/1.d9fbbe87.chunk.js.map",
   "runtime~main.js": "/cards-memory/static/js/runtime~main.7a8f5a5d.js",
@@ -64,8 +64,8 @@
   "static/media/ContraPortada.png": "/cards-memory/static/media/ContraPortada.345a0634.png",
   "static/media/GameOver.png": "/cards-memory/static/media/GameOver.4da97bc6.png",
   "static/media/index.css": "/cards-memory/static/media/BackGround.802cd3e3.png",
-  "static/css/main.e728ca70.chunk.css.map": "/cards-memory/static/css/main.e728ca70.chunk.css.map",
+  "static/css/main.9a7196cb.chunk.css.map": "/cards-memory/static/css/main.9a7196cb.chunk.css.map",
   "index.html": "/cards-memory/index.html",
-  "precache-manifest.3f85772164c124b9abc6600ed1229b22.js": "/cards-memory/precache-manifest.3f85772164c124b9abc6600ed1229b22.js",
+  "precache-manifest.69efebb841996fa9d0451cd06f115209.js": "/cards-memory/precache-manifest.69efebb841996fa9d0451cd06f115209.js",
   "service-worker.js": "/cards-memory/service-worker.js"
 }
