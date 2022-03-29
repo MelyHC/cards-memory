@@ -15,7 +15,7 @@
   text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
 }
 
-.size-custome {
+.size-custom {
   font-size: 2rem;
 }
 
@@ -24,11 +24,12 @@
   width: 95%;
 }
 
-.icon-white {
+.icon-custom {
   color: white;
+  font-size: 1.75rem;
 }
 
-.icon-white:hover {
+.icon-custom:hover {
   color: rgb(231, 231, 231);
 }
 
@@ -73,11 +74,11 @@
     min-height: 14rem;
   }
 
-  .size-custome {
+  .size-custom {
     font-size: 2.5rem;
   }
 
-  .size-custome-mini {
+  .size-custom-mini {
     padding-top: 0.5rem;
     font-size: 1.5rem;
     margin-bottom: 0;
@@ -85,17 +86,17 @@
 }
 
 @media screen and (min-width: 567px) {
-  .size-custome {
+  .size-custom {
     font-size: 3rem;
   }
 
-  .size-custome-mini {
+  .size-custom-mini {
     font-size: 2rem;
   }
 }
 
 @media screen and (min-width: 720px) {
-  .size-custome {
+  .size-custom {
     font-size: 3rem;
   }
 }
@@ -106,11 +107,11 @@
     min-height: 16rem;
   }
 
-  .size-custome {
+  .size-custom {
     font-size: 3rem;
     padding-top: 1rem;
   }
-  .size-custome-mini {
+  .size-custom-mini {
     margin-bottom: 0.5rem;
   }
 }
