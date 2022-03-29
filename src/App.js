@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import suffle from 'shuffle-array';
-import data from './dataCards/dataCardsBz.js';
-import { getLocalStorage } from './utils/localStorage.js';
-import btnEasy from './BZcartas/Botones/D_DBottonFacil.png';
-import btnMedium from './BZcartas/Botones/D_DBottonMedio.png';
-import btnHard from './BZcartas/Botones/D_DBottonDificil.png';
-import back from './BZcartas/ContraPortada.png';
-import gameOver from './BZcartas/GameOver.png';
+import data from './dataCards/dataCardsBzV2';
+import { getLocalStorage } from './utils/localStorage';
+import btnEasy from './BZRecuerdo/Btns/01BtnFacil.png';
+import btnMedium from './BZRecuerdo/Btns/02BtnMedio.png';
+import btnHard from './BZRecuerdo/Btns/03BtnDificil.png';
+import btnVeryHard from './BZRecuerdo/Btns/04BtnHard.png';
+import back from './BZRecuerdo/BzCarta/00ContraPortada.png';
+import gameOver from './BZRecuerdo/Btns/00BtnGameOver.png';
 import './App.css';
 
 class App extends Component {
@@ -117,12 +118,12 @@ class App extends Component {
       return (
         <div className="home d-flex justify-content-center align-items-center bg-black m-0 p-2">
           <section className="col-11 col-sm-8 col-lg-7 rounded p-0">
-            <h1 className="text-center mt-3 text-white stroke">Elige un nivel para comenzar</h1>
+            <h1 className="text-center mt-3 text-white">Elige un nivel para comenzar</h1>
             <form onClick={this.selectLevel} className="row mt-4 p-0">
               <input alt="nivel fácil" className="col-xs-12 col-md-6 btn btn-custom" type="image" src={btnEasy} value="8" />
               <input alt="nivel medio" className="col-xs-12 col-md-6 btn btn-custom" type="image" src={btnMedium} value="16" />
               <input alt="nivel difícil" className="col-xs-12 col-md-6 btn btn-custom" type="image" src={btnHard} value="32" />
-              <input alt="nivel difícil" className="col-xs-12 col-md-6 btn btn-custom" type="image" src={btnHard} value="64" />
+              <input alt="nivel muy difícil" className="col-xs-12 col-md-6 btn btn-custom" type="image" src={btnVeryHard} value="64" />
             </form>
           </section>
         </div>
@@ -131,18 +132,16 @@ class App extends Component {
       return (
         <div className="home bg-black">
           <header className="d-flex justify-content-between text-white">
-            <i className="fas fa-undo-alt btn icon-custom stroke" onClick={this.refreshPage}></i>
-            <h3 className="m-1 stroke">N°: {count}</h3>
+            <i className="fas fa-undo-alt btn icon-custom" onClick={this.refreshPage}></i>
+            <h3 className="m-1">N°: {count}</h3>
           </header>
           <div className="container">
             {
               cards.every(cardHide => cardHide.visibility)
-                ? <div className="game-over d-flex view justify-content-center align-items-center position-relative">
-                  <img className="img-game-over  img-fluid" src={gameOver} alt="" />
-                  <section className="rounded pt-5 position-absolute text-white stroke">
-                    <h2 className="mt-4 mr-3 mb-0 mt-sm-4 size-custom">Ganaste!</h2>
-                    <h5 className="pr-2 size-custom-mini">{count} intentos</h5>
-                  </section>
+                ? <div className="game-over d-flex view justify-content-center align-items-center position-relative flex-column pb-5">
+                  <h5 className="mb-0 text-white center size-custom">{count}</h5>
+                  <span className="text-white mb-1">movimientos</span>
+                  <img className="img-game-over  img-fluid pb-5 mb-5" src={gameOver} alt="" />
                 </div>
                 : <div
                   className="row m-0 p-0 view justify-content-center"
@@ -170,35 +169,38 @@ class App extends Component {
 
 
   scaleCards = () => {
-    const widthScreen = window.innerWidth;
+    let widthScreen = window.innerWidth;
 
     let widthCard = 0;
     let heightCard = 0;
 
     if (widthScreen < 576) {
       console.log('0')
-      widthCard = this.convertPxRem(widthScreen / 2);
-      heightCard = widthCard * 1.3
+      widthCard = (widthScreen - 30) / 2;
+      heightCard = widthCard * 1.75
 
     } else if (widthScreen >= 1200) {
       console.log('1200', widthScreen)
-      widthCard = this.convertPxRem(widthScreen / 6.8);
-      heightCard = widthCard * 1.6
+      widthScreen = widthScreen > 1140 ? 1140 : widthScreen;
+      widthCard = (widthScreen - 30) / 4;
+      heightCard = widthCard * 1.75
 
     } else if (widthScreen >= 992) {
       console.log('992')
-      widthCard = this.convertPxRem(widthScreen / 4);
-      heightCard = widthCard * 1.4
+      widthScreen = widthScreen > 960 ? 960 : widthScreen;
+      widthCard = (widthScreen - 30) / 4;
+      heightCard = widthCard * 1.75
 
     } else if (widthScreen >= 576) {
       console.log('576')
-      widthCard = this.convertPxRem(widthScreen / 3);
-      heightCard = widthCard * 1.4
+      widthScreen = widthScreen > 540 ? 540 : widthScreen;
+      widthCard = (widthScreen - 30) / 3;
+      heightCard = widthCard * 1.75
     }
 
     return {
-      width: `${widthCard}rem`,
-      height: `${heightCard}rem`,
+      width: `${widthCard}px`,
+      height: `${heightCard}px`,
       // position: 'relative'
     };
   };

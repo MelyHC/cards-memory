@@ -10,18 +10,8 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.stroke {
-  font-weight: 700;
-  text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
-}
-
 .size-custom {
-  font-size: 2rem;
-}
-
-.btn-custom {
-  height: 50%;
-  width: 95%;
+  font-size: 10em;
 }
 
 .icon-custom {
@@ -74,31 +64,29 @@
     min-height: 14rem;
   }
 
-  .size-custom {
-    font-size: 2.5rem;
-  }
+  /* .size-custom {
+    font-size: 4rem;
+  } */
 
-  .size-custom-mini {
-    padding-top: 0.5rem;
+  /* .size-custom-mini {
     font-size: 1.5rem;
-    margin-bottom: 0;
-  }
+  } */
 }
 
 @media screen and (min-width: 567px) {
-  .size-custom {
+  /* .size-custom {
     font-size: 3rem;
-  }
+  } */
 
-  .size-custom-mini {
+  /* .size-custom-mini {
     font-size: 2rem;
-  }
+  } */
 }
 
 @media screen and (min-width: 720px) {
-  .size-custom {
+  /* .size-custom {
     font-size: 3rem;
-  }
+  } */
 }
 
 @media screen and (min-width: 767px) {
@@ -107,13 +95,12 @@
     min-height: 16rem;
   }
 
-  .size-custom {
+  /* .size-custom {
     font-size: 3rem;
-    padding-top: 1rem;
-  }
-  .size-custom-mini {
+  } */
+  /* .size-custom-mini {
     margin-bottom: 0.5rem;
-  }
+  } */
 }
 
 @media screen and (min-width: 1200px) {
