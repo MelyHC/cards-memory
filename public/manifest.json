@@ -2,8 +2,8 @@
   "theme_color": "#1D71E5",
   "background_color": "#1D71E5",
   "display": "fullscreen",
-  "scope": "/",
-  "start_url": "/",
+  "scope": "https://bluezone.mx/p/bz-recuerdo/",
+  "start_url": "https://bluezone.mx/p/bz-recuerdo/",
   "name": "BZ Recuerdo",
   "short_name": "BZR",
   "icons": [

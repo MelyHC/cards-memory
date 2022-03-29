@@ -149,7 +149,7 @@ class App extends Component {
                 >
                   {
                     cards.map(({ img, visibility, flip, index }, i) =>
-                      <div className="col-6 col-sm-4 col-lg-3 my-1 content-car" key={i} style={this.scaleCards()}>
+                      <div className="col-6 col-sm-4 col-lg-3 my-1  content-car" key={i} style={this.scaleCards()}>
                         <figure className={`card-flip ${flip ? "is-flipped" : null} ${visibility ? "hidden" : null}`} onClick={() => this.handleClick(index)}>
                           <img className="card-face card-face-front img-fluid rounded" src={img} alt={img}></img>
                           <img className="card-face img-fluid rounded" src={back} alt="parte trasera de la carta"></img>
@@ -177,31 +177,31 @@ class App extends Component {
     if (widthScreen < 576) {
       console.log('0')
       widthCard = (widthScreen - 30) / 2;
-      heightCard = widthCard * 1.75
+      heightCard = widthCard * 1.75 - 60
 
     } else if (widthScreen >= 1200) {
       console.log('1200', widthScreen)
       widthScreen = widthScreen > 1140 ? 1140 : widthScreen;
       widthCard = (widthScreen - 30) / 4;
-      heightCard = widthCard * 1.75
+      heightCard = widthCard * 1.75 - 60
 
     } else if (widthScreen >= 992) {
       console.log('992')
       widthScreen = widthScreen > 960 ? 960 : widthScreen;
       widthCard = (widthScreen - 30) / 4;
-      heightCard = widthCard * 1.75
+      heightCard = widthCard * 1.75 - 60
 
     } else if (widthScreen >= 720) {
       console.log('720')
       widthScreen = widthScreen > 720 ? 720 : widthScreen;
       widthCard = (widthScreen - 30) / 3;
-      heightCard = widthCard * 1.75
+      heightCard = widthCard * 1.75 - 60
 
     } else if (widthScreen >= 576) {
       console.log('576')
       widthScreen = widthScreen > 540 ? 540 : widthScreen;
       widthCard = (widthScreen - 30) / 3;
-      heightCard = widthCard * 1.75
+      heightCard = widthCard * 1.75 - 60
     }
 
     return {
