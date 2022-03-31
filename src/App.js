@@ -33,9 +33,8 @@ class App extends Component {
         }
       });
 
-      localStorage.setItem('bz-count', JSON.stringify(currentCount + 1));
       localStorage.setItem('bz-cards', JSON.stringify(cards));
-      this.setState({ count: currentCount + 1 })
+      this.setState({ cards });
     }, 900);
   };
 
@@ -62,7 +61,7 @@ class App extends Component {
 
     localStorage.setItem('bz-cards', JSON.stringify(cards));
     localStorage.setItem('bz-compare-cards', JSON.stringify(compareCards));
-    this.setState({ cards, compareCards })
+    this.setState({ cards, compareCards, count: count + 1 })
   };
 
   randomNum = () => {
